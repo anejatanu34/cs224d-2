@@ -9,7 +9,7 @@ def normalizeRows(x):
     """ Row normalization function """
     # Implement a function that normalizes each row of a matrix to have unit length
     
-    x = (x.T / np.sum(x.T, axis=0)).T
+    x = (x.T / np.sqrt(np.sum((x.T)**2, axis=0))).T
     
     return x
 
@@ -129,7 +129,7 @@ def cbow(currentWord, C, contextWords, tokens, inputVectors, outputVectors,
     gradOut = np.zeros(outputVectors.shape)
 
     ### YOUR CODE HERE
-    #raise NotImplementedError
+    raise NotImplementedError
     ### END YOUR CODE
     
     return cost, gradIn, gradOut
